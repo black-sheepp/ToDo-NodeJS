@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= page_title %></title>
+    <link rel="stylesheet" href=" /CSS/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/c9dea220d9.js" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <h1>ToDo List</h1>
+        </a>
+    </div>
+
+    <div class="input-section">
+        <form action="/" method="POST">
+            <!-- Add ToDo: -->
+            <label for="Add-To-Do" id="label">Add ToDo:</label>
+            <input type="text" id="Add-To-Do" placeholder="Add Task" name="WorkToDo">
+            <!-- Deadline: -->
+            <label for="Add-Dealine">Deadline:</label>
+            <input type="date" id="Add-Dealine" placeholder="MM/DD/YYYY" name="Deadline">
+            <!-- ToDo-Category: -->
+            <label for="ToDo-Category">ToDo-Category:</label>
+            <select name="ToDoCategory" id="ToDo-Category">
+                <option value="Work">Work</option>
+                <option value="Fitness">Fitness</option>
+                <option value="Shoping">Shopping</option>
+                <option value="Travel">Travel</option>
+                <option value="Personal">Personal</option>
+                <option value="Entertainment">Entertainment</option>
+            </select>
+            <!-- ADD ToDo Button-->
+            <input type="submit" value="ADD ToDo" class="submit">
+        </form>
+    </div>
+    <!-- <div class="input-section">
+        <form action="/" method="POST">
+            <label for="Add-To-Do" id="label">Add ToDo:</label>
+            <input type="text" id="Add-To-Do" placeholder="Add Task" name="WorkToDo">
+            <label for="Add-Dealine">Deadline:</label>
+            <input type="date" id="Add-Dealine" placeholder="MM/DD/YYYY" name="Deadline">
+            <label for="ToDo-Category">ToDo-Category:</label>
+            <select name="ToDo-Category" id="ToDo-Category">
+                <option value="Work">Work</option>
+                <option value="Fitness">Fitness</option>
+                <option value="Shoping">Shoping</option>
+                <option value="Travel">Travel</option>
+                <option value="Personal">Personal</option>
+                <option value="Entertainment">Entertainment</option>
+            </select>
+            <input type="submit" value="ADD ToDo" class="submit">
+        </form>
+    </div> -->
+
+    <div>
+        
+        <ul class="list-group">
+            <% for(let i of todo_data){ %>
+                <li class="list-group-item">
+                    <%= i.WorkToDo %>
+                    <div class="list-action">
+                        <p class="tag"> <%= i.ToDoCategory %> </p>
+                        <p class="tag-dealine"> <%= i.Deadline %> </p>
+                        <a href="/delete/?WorkToDo=<%= i.WorkToDo %>" class="delete"><i class="fa-sharp fa-solid fa-trash"></i></a>
+                    </div>
+                </li>
+            <% } %>
+            <!-- <li class="list-group-item">
+                An item Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, dolor!
+                <div class="list-action">
+                    <p class="tag">Work</p>
+                    <p class="tag-dealine">Jan 27, 2023 </p>
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <i class="fa-sharp fa-solid fa-trash"></i>
+                </div>
+            </li> -->
+        </ul>
+    </div>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+</body>
+</html>

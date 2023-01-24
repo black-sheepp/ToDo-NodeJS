@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&family=Josefin+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat&family=Roboto+Slab:wght@500;600&family=Source+Code+Pro:wght@200&display=swap');
+
+:root{
+    --primary-color : rgb(74, 18, 203);
+    --secondary-color: antiquewhite;
+    --green-create: #13a813 ;
+    --red-delete: #FF0000 ;
+    --orange-dealine: #FFA500 ;
+}
+*{
+    font-family: 'Bai Jamjuree', sans-serif;
+    padding: 0;
+    margin: auto;
+    max-width: 800px;
+}
+.container-fluid{
+    background-color: var(--primary-color);
+    border-radius: 0 0 10px 10px;
+    color: var(--secondary-color);
+    margin: 0 0 1rem 0 ;
+    padding: 1.5rem;
+    font-weight: bolder;
+}
+.container-fluid .navbar-brand h1{
+    text-align: center;
+}
+
+.input-section{
+    background-color: var(--secondary-color);
+    margin: 0;
+    padding: 2rem;
+    border: .1rem solid var(--primary-color);
+    border-radius: 1rem;
+}
+label{
+    color: var(--primary-color);
+    font-weight: bolder;
+    font-size: 1.3rem;
+    margin: 0;
+    padding: 1rem ;
+}
+#Add-To-Do,#Add-Dealine{
+    border: .2rem solid var(--primary-color);
+    width: 200px;
+    height: 2.5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+select{
+    border: .2rem solid var(--primary-color);
+    border-radius: 1rem;
+    margin: 1rem;
+    font-weight: bold;
+    height: 2rem;
+    text-align: center;
+}
+.submit{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    width: 150px;
+    margin-top: 2rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+    border: .5rem solid var(--primary-color);
+    border-radius: .5rem;
+    float: right;
+}
+
+.list-group-item{
+    margin: 1rem 0 0 0;
+    border: .2rem solid var(--primary-color) !important;
+    border-radius: 10px !important;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color) !important;
+}
+
+.list-action{
+    display: flex;
+    flex-direction: row;
+    float: right;
+    margin-top: .4rem;
+    padding: 0 1rem; 
+    color: black;
+    font-weight: bolder;
+}
+.tag, .tag-dealine{
+    font-size: 1rem;
+    padding: 0 2rem 0 0;
+    margin: auto;
+}
+.tag-dealine{
+    color: orange;
+}
+
+.list-action .fa-sharp{
+    padding: 0 .5rem;
+    color: var(--red-delete);
+    font-size: 1.5rem;
+}
+.list-action {
+    padding: 0 .5rem;
+    color: var(--green-create);
+    font-size: 1.5rem;
+}
+
+.fa-sharp:hover{
+    cursor: pointer;
+    font-size: larger;
+    transition: .3s;
+}
+
+@media only screen and (max-width: 800px){
+    .input-section{
+        height: 350px;
+        display: grid;
+    }
+}
